@@ -33,8 +33,7 @@
     { id: 'h11', name: 'USB Study Lamp', cat: 'electronics', price: 299,
       tags: 'Electronics · 3 brightness levels', img: 'https://picsum.photos/seed/he-lamp/400/260' },
     { id: 'h12', name: 'Bucket + Mug Set', cat: 'toiletries', price: 199,
-      tags: 'Toiletries · 16L bucket', img: 'https://picsum.photos/seed/he-bucket/400/260' },
-  ];
+      tags: 'Toiletries · 16L bucket', img: 'assets/images/Bucket + Mug Set.jpg' }];
 
   const grid = document.getElementById('heGrid');
   const resultCount = document.getElementById('heResultCount');

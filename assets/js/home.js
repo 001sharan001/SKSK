@@ -36,8 +36,8 @@
   /* ---------------- Demo restaurant data ---------------- */
   const RESTAURANTS = [
     {
-      id: 'r1', name: 'Bev Cafe', tags: 'Beverages · Snacks · Icecream', cat: ['veg', 'healthy'],
-      rating: 4.5 , time: '18-22 min', veg: true, color: '#0F6E52',
+      id: 'r1', name: 'Bev Cafe', tags: 'North Indian · Thali · Veg', cat: ['veg', 'healthy'],
+      rating: 4.5, time: '18-22 min', veg: true, color: '#0F6E52', image:'/assets/images/Bev Cafe.jpg',
       items: [
         { id: 'i1', name: 'Haldiram Takatak', price: 25 },
         { id: 'i2', name: 'Fun Flip Puff', price: 30 },
@@ -46,7 +46,7 @@
     },
     {
       id: 'r2', name: 'Speedy Chow', tags: 'Fast Food · Veg · Rolls', cat: ['veg', 'fastfood'],
-      rating: 4.5, time: '20-25 min', veg: true, color: '#D6483B',
+      rating: 4.5, time: '20-25 min', veg: true, color: '#D6483B',image:'/assets/images/speedy chow.jpg',
       items: [
         { id: 'i4', name: 'Veg Manchurian Dry', price: 189.52 },
         { id: 'i5', name: 'Shanghai Veg Spring Roll', price: 133.33 },
@@ -55,7 +55,7 @@
     },
     {
       id: 'r3', name: 'House of Kulcha', tags: 'North Indian · Breakfast · Main Course', cat: ['lunch', 'veg'],
-      rating: 4.6, time: '12-16 min', veg: true, color: '#8A5A0F',
+      rating: 4.6, time: '12-16 min', veg: true, color: '#8A5A0F',image:'/assets/images/House of Kulcha.jpg',
       items: [
         { id: 'i7', name: 'Aloo Kulcha', price: 130 },
         { id: 'i8', name: 'Gobhi Matar Kulcha', price: 170 },
@@ -64,7 +64,7 @@
     },
     {
       id: 'r4', name: 'Golzza', tags: 'Snacks', cat: ['snacks', 'veg'],
-      rating: 4.6, time: '15-20 min', veg: true, color: '#C7841F',
+      rating: 4.6, time: '15-20 min', veg: true, color: '#C7841F',image:'/assets/images/Golzza.jpg',
       items: [
         { id: 'i10', name: 'Chaat Platter', price: 149 },
         { id: 'i11', name: 'Tikki Chaat', price: 89 },
@@ -73,7 +73,7 @@
     },
     {
       id: 'r5', name: 'Blue Tokai', tags: 'Sandwich · Coffee', cat: ['healthy', 'veg'],
-      rating: 4.7, time: '18-22 min', veg: true, color: '#1E8E5A',
+      rating: 4.7, time: '18-22 min', veg: true, color: '#1E8E5A',image:'/assets/images/blue tokai.jpg',
       items: [
         { id: 'i13', name: 'Latte', price: 99 },
         { id: 'i14', name: 'Cascara & Hibicus', price: 122 },
@@ -82,7 +82,7 @@
     },
     {
       id: 'r6', name: 'South Circle', tags: 'South Indian · Veg · Biryani', cat: ['veg'],
-      rating: 4.2, time: '25-30 min', veg: true, color: '#9C2F26',
+      rating: 4.2, time: '25-30 min', veg: true, color: '#9C2F26',image:'/assets/images/South Circle.jpg',
       items: [
         { id: 'i16', name: 'Idly with Chutney', price: 75.24 },
         { id: 'i17', name: 'Masala Dosa', price: 103.81 },
@@ -91,7 +91,7 @@
     },
     {
       id: 'r7', name: 'Basil', tags: 'Cafe · Milkshakes · Waffles', cat: ['cafe'],
-      rating: 4.5, time: '10-14 min', veg: true, color: '#2E6FBB',
+      rating: 4.5, time: '10-14 min', veg: true, color: '#2E6FBB',image:'/assets/images/basil.jpg',
       items: [
         { id: 'i19', name: 'Nutella Waffle', price: 120 },
         { id: 'i20', name: 'Oreo Milkshake', price: 100 },
@@ -100,7 +100,7 @@
     },
     {
       id: 'r8', name: 'The Cakerie', tags: 'Cakes · Deserts', cat: ['fastfood', 'veg'],
-      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',
+      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',image:'/assets/images/The Cakerie.jpg',
       items: [
         { id: 'i22', name: 'Biscoff Cake Half Kg', price: 560 },
         { id: 'i23', name: 'Chocolate Praline One Kg', price: 1046.67 },
@@ -109,7 +109,7 @@
     },
      {
       id: 'r9', name: 'Panjaab 13', tags: 'Fast Food · Chinese', cat: ['fastfood', 'nonveg'],
-      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',
+      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',image:'/assets/images/Panjaab 13.jpg',
       items: [
         { id: 'i22', name: 'Gravy with 2 Butter Naan', price: 132.38 },
         { id: 'i23', name: 'Paneer Tikka Makhani', price: 122.86 },
@@ -118,7 +118,7 @@
     },
      {
       id: 'r10', name: 'Dohful', tags: 'Fast Food · Cookies', cat: ['fastfood', 'veg'],
-      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',
+      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',image:'/assets/images/Dohful.jpg',
       items: [
         { id: 'i22', name: 'Choco Brownie Cookie', price: 75 },
         { id: 'i23', name: 'Cappuccino', price: 100 },
@@ -127,7 +127,7 @@
     },
      {
       id: 'r11', name: 'The Healthy Wave', tags: 'Healthy Food · Salad', cat: ['food', 'veg'],
-      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',
+      rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',image:'/assets/images/Healthy wave.jpg',
       items: [
         { id: 'i22', name: 'Toasted Paneer Salad', price: 144 },
         { id: 'i23', name: 'Rice Bowl', price: 144 },
@@ -136,7 +136,7 @@
     },
      {
       id: 'r12', name: 'China Box', tags: 'Fast Food · Chinese', cat: ['fastfood', 'nonveg'],
-      rating: 4.1, time: '20-24 min', veg: false, color: '#0B5340',
+      rating: 4.1, time: '20-24 min', veg: false, color: '#0B5340',image:'/assets/images/China Box.jpg',
       items: [
         { id: 'i22', name: 'Chicken Fried Rice', price: 130 },
         { id: 'i23', name: 'White Sauce Pasta', price: 150 },
