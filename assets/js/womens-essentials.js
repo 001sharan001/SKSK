@@ -37,21 +37,21 @@
   /* ---------------- Demo product data ---------------- */
   const PRODUCTS = [
     { id: 'w1', name: 'Ultra-Thin Sanitary Pads (Pack of 20)', cat: 'period', price: 145,
-      tags: 'Period Care · Regular flow', img: 'https://picsum.photos/seed/we-pads/400/260' },
+      tags: 'Period Care · Regular flow', img: '/assets/images/Ultra-Thin Sanitary Pads (Pack of 20).webp' },
     { id: 'w2', name: 'Organic Cotton Tampons (Pack of 16)', cat: 'period', price: 190,
-      tags: 'Period Care · Applicator-free', img: 'https://picsum.photos/seed/we-tampons/400/260' },
+      tags: 'Period Care · Applicator-free', img: '/assets/images/Organic Cotton Tampons (Pack of 16).jpg' },
     { id: 'w3', name: 'Reusable Menstrual Cup', cat: 'period', price: 399,
-      tags: 'Period Care · Eco-friendly', img: 'https://picsum.photos/seed/we-cup/400/260' },
+      tags: 'Period Care · Eco-friendly', img: '/assets/images/Reusable Menstrual Cup.webp' },
     { id: 'w4', name: 'Menstrual Cramp Relief Patches', cat: 'wellness', price: 120,
-      tags: 'Wellness · Heat patch, 4-pack', img: 'https://picsum.photos/seed/we-patch/400/260' },
+      tags: 'Wellness · Heat patch, 4-pack', img: '/assets/images/Menstrual Cramp Relief Patches.webp' },
     { id: 'w5', name: 'pH-Balanced Intimate Wash', cat: 'hygiene', price: 175,
-      tags: 'Hygiene · 150ml', img: 'https://picsum.photos/seed/we-wash/400/260' },
+      tags: 'Hygiene · 150ml', img: '/assets/images/pH-Balanced Intimate Wash.jpg' },
     { id: 'w6', name: 'Flushable Intimate Wipes', cat: 'hygiene', price: 99,
-      tags: 'Hygiene · Pack of 30', img: 'https://picsum.photos/seed/we-wipes/400/260' },
+      tags: 'Hygiene · Pack of 30', img: '/assets/images/Flushable Intimate Wipes.jpg' },
     { id: 'w7', name: 'Personal Safety Alarm Keychain', cat: 'safety', price: 249,
-      tags: 'Safety · 130dB siren', img: 'https://picsum.photos/seed/we-alarm/400/260' },
+      tags: 'Safety · 130dB siren', img: '/assets/images/Personal Safety Alarm Keychain.jpg' },
     { id: 'w8', name: 'Calming Herbal Tea (Cramp Relief)', cat: 'wellness', price: 160,
-      tags: 'Wellness · 20 sachets', img: 'https://picsum.photos/seed/we-tea/400/260' },
+      tags: 'Wellness · 20 sachets', img: '/assets/images/Calming Herbal Tea (Cramp Relief).jpg' },
   ];
 
   const grid = document.getElementById('weGrid');

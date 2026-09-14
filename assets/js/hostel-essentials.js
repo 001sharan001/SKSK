@@ -11,29 +11,29 @@
   /* ---------------- Demo product data ---------------- */
   const PRODUCTS = [
     { id: 'h1', name: 'Toothpaste + Toothbrush Combo', cat: 'toiletries', price: 89,
-      tags: 'Toiletries · Travel size', img: 'https://picsum.photos/seed/he-tooth/400/260' },
+      tags: 'Toiletries · Travel size', img: '/assets/images/Toothpaste + Toothbrush Combo.jpg' },
     { id: 'h2', name: 'Shampoo Sachet Pack (6x)', cat: 'toiletries', price: 60,
-      tags: 'Toiletries · Anti-dandruff', img: 'https://picsum.photos/seed/he-shampoo/400/260' },
+      tags: 'Toiletries · Anti-dandruff', img: '/assets/images/Shampoo Sachet Pack (6x).jpg' },
     { id: 'h3', name: 'Detergent Bar (2-pack)', cat: 'toiletries', price: 45,
-      tags: 'Toiletries · Laundry', img: 'https://picsum.photos/seed/he-detergent/400/260' },
+      tags: 'Toiletries · Laundry', img: '/assets/images/Detergent Bar (2-pack).jpg' },
     { id: 'h4', name: 'A4 Ruled Notebook (200 pages)', cat: 'stationery', price: 65,
-      tags: 'Stationery · Single-line', img: 'https://picsum.photos/seed/he-notebook/400/260' },
+      tags: 'Stationery · Single-line', img: '/assets/images/A4 Ruled Notebook (200 pages).jpg' },
     { id: 'h5', name: 'Gel Pen Set (5 pcs)', cat: 'stationery', price: 55,
-      tags: 'Stationery · Blue & black', img: 'https://picsum.photos/seed/he-pens/400/260' },
+      tags: 'Stationery · Blue & black', img: '/assets/images/Gel Pen Set (5 pcs).jpg' },
     { id: 'h6', name: 'Bedsheet + Pillow Cover Set', cat: 'bedding', price: 349,
-      tags: 'Bedding · Single bed', img: 'https://picsum.photos/seed/he-bedsheet/400/260' },
+      tags: 'Bedding · Single bed', img: '/assets/images/Bedsheet + Pillow Cover Set.jpg' },
     { id: 'h7', name: 'Warm Blanket (Single)', cat: 'bedding', price: 599,
-      tags: 'Bedding · Fleece', img: 'https://picsum.photos/seed/he-blanket/400/260' },
+      tags: 'Bedding · Fleece', img: '/assets/images/Warm Blanket (Single).jpg' },
     { id: 'h8', name: 'Instant Noodles (Pack of 6)', cat: 'snacks', price: 84,
-      tags: 'Snacks · Masala', img: 'https://picsum.photos/seed/he-noodles/400/260' },
+      tags: 'Snacks · Masala', img: '/assets/images/Instant Noodles (Pack of 6).jpg' },
     { id: 'h9', name: 'Assorted Biscuits Combo', cat: 'snacks', price: 110,
-      tags: 'Snacks · 6 packs', img: 'https://picsum.photos/seed/he-biscuits/400/260' },
+      tags: 'Snacks · 6 packs', img: '/assets/images/Assorted Biscuits Combo.jpg' },
     { id: 'h10', name: 'Extension Board (4-socket)', cat: 'electronics', price: 249,
-      tags: 'Electronics · Surge protected', img: 'https://picsum.photos/seed/he-extension/400/260' },
+      tags: 'Electronics · Surge protected', img: '/assets/images/Extension Board (4-socket).jpg' },
     { id: 'h11', name: 'USB Study Lamp', cat: 'electronics', price: 299,
-      tags: 'Electronics · 3 brightness levels', img: 'https://picsum.photos/seed/he-lamp/400/260' },
+      tags: 'Electronics · 3 brightness levels', img: '/assets/images/USB Study Lamp.jpg' },
     { id: 'h12', name: 'Bucket + Mug Set', cat: 'toiletries', price: 199,
-      tags: 'Toiletries · 16L bucket', img: 'assets/images/Bucket + Mug Set.jpg' }];
+      tags: 'Toiletries · 16L bucket', img: '/assets/images/Bucket + Mug Set.jpg' }];
 
   const grid = document.getElementById('heGrid');
   const resultCount = document.getElementById('heResultCount');

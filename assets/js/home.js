@@ -37,7 +37,7 @@
   const RESTAURANTS = [
     {
       id: 'r1', name: 'Bev Cafe', tags: 'North Indian · Thali · Veg', cat: ['veg', 'healthy'],
-      rating: 4.5, time: '18-22 min', veg: true, color: '#0F6E52', image:'/assets/images/Bev Cafe.jpg',
+      rating: 4.5, time: '18-22 min', veg: true, color: '#0F6E52', image:'assets/images/Bev Cafe.jpg',
       items: [
         { id: 'i1', name: 'Haldiram Takatak', price: 25 },
         { id: 'i2', name: 'Fun Flip Puff', price: 30 },
@@ -99,7 +99,7 @@
       ],
     },
     {
-      id: 'r8', name: 'The Cakerie', tags: 'Cakes · Deserts', cat: ['fastfood', 'veg'],
+      id: 'r8', name: 'The Cakerie', tags: 'Cakes · Deserts', cat: ['bakery', 'veg'],
       rating: 4.1, time: '20-24 min', veg: true, color: '#0B5340',image:'/assets/images/The Cakerie.jpg',
       items: [
         { id: 'i22', name: 'Biscoff Cake Half Kg', price: 560 },
@@ -172,7 +172,10 @@
 
     grid.innerHTML = filtered.map((r) => `
       <div class="r-card">
-        <div class="r-cover" style="background:linear-gradient(135deg, ${r.color}, ${r.color}cc);">
+        <div class="r-cover"
+     style="background-image: linear-gradient(135deg, ${r.color}55, ${r.color}88), url('${r.image}');
+            background-size: cover;
+            background-position: center;">
           <span class="r-badge ${r.veg ? 'veg' : 'non-veg'}"><i class="fa-solid ${r.veg ? 'fa-leaf' : 'fa-drumstick-bite'}"></i> ${r.veg ? 'Veg' : 'Non-Veg'}</span>
           <button class="r-fav-btn" data-fav="${r.id}" aria-label="Add to favorites"><i class="fa-solid fa-heart"></i></button>
         </div>
