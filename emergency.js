@@ -1,89 +1,194 @@
-/* ==========================================================================
-   CampusGo — emergency.html page logic
-   ========================================================================== */
+// ================================
+// CampusGo - Emergency Page
+// ================================
 
-(() => {
-  if (!CampusGo.requireStep('home')) return;
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "First Aid Kit (Compact)",
+    cat: "firstaid",
+    tags: "Bandages · Antiseptic · Emergency",
+    price: 149,
+    img: "assets/images/First Aid Kit (Compact).jpg"
+  },
+  {
+    id: 2,
+    name: "Antiseptic Spray",
+    cat: "firstaid",
+    tags: "Wound care · Antiseptic",
+    price: 99,
+    img: "assets/images/Antiseptic Spray.jpg"
+  },
+  {
+    id: 3,
+    name: "Paracetamol Strip (500mg)",
+    cat: "fever",
+    tags: "Fever · Pain relief",
+    price: 25,
+    img: "assets/images/Paracetamol Strip (500mg).png"
+  },
+  {
+    id: 4,
+    name: "Digital Thermometer",
+    cat: "fever",
+    tags: "Temperature · Digital",
+    price: 199,
+    img: "assets/images/Digital Thermometer.jpg"
+  }
+];
 
-  const session = CampusGo.getSession();
-  document.getElementById('navAvatar').textContent = (session?.name || 'S').trim()[0].toUpperCase();
+const emGrid = document.getElementById("emGrid");
+const emResultCount = document.getElementById("emResultCount");
+const categoryCards = document.querySelectorAll(".em-cat-card");
 
-  const PRODUCTS = [
-    { id: 'e1', name: 'First Aid Kit (Compact)', cat: 'firstaid', price: 249,
-      tags: 'First Aid · Bandages, gauze, tape', img: 'https://picsum.photos/seed/em-kit/400/260' },
-    { id: 'e2', name: 'Antiseptic Spray', cat: 'firstaid', price: 85,
-      tags: 'First Aid · 60ml', img: 'https://picsum.photos/seed/em-antiseptic/400/260' },
-    { id: 'e3', name: 'Paracetamol Strip (500mg)', cat: 'fever', price: 25,
-      tags: 'Fever & Pain · 10 tablets', img: 'https://picsum.photos/seed/em-para/400/260' },
-    { id: 'e4', name: 'Digital Thermometer', cat: 'fever', price: 149,
-      tags: 'Fever & Pain · 30-sec read', img: 'https://picsum.photos/seed/em-thermo/400/260' },
-    { id: 'e5', name: 'ORS Rehydration Sachets (Pack of 5)', cat: 'hydration', price: 60,
-      tags: 'Hydration · WHO formula', img: 'https://picsum.photos/seed/em-ors/400/260' },
-    { id: 'e6', name: 'Electrolyte Drink Mix', cat: 'hydration', price: 45,
-      tags: 'Hydration · Single serve', img: 'https://picsum.photos/seed/em-electro/400/260' },
-    { id: 'e7', name: 'Cough Syrup', cat: 'respiratory', price: 95,
-      tags: 'Cold & Respiratory · 100ml', img: 'https://picsum.photos/seed/em-cough/400/260' },
-    { id: 'e8', name: 'Inhaler (Bronchodilator)', cat: 'respiratory', price: 210,
-      tags: 'Cold & Respiratory · Rx recommended', img: 'https://picsum.photos/seed/em-inhaler/400/260' },
-    { id: 'e9', name: 'Sterile Eye Drops', cat: 'eyecare', price: 70,
-      tags: 'Eye & Wound Care · 10ml', img: 'https://picsum.photos/seed/em-eyedrops/400/260' },
-    { id: 'e10', name: 'Adhesive Wound Dressing Pack', cat: 'eyecare', price: 55,
-      tags: 'Eye & Wound Care · Assorted sizes', img: 'https://picsum.photos/seed/em-dressing/400/260' },
-  ];
+let activeCat = "firstaid";
 
-  const grid = document.getElementById('emGrid');
-  const resultCount = document.getElementById('emResultCount');
-  let activeCat = 'all';
+// ================================
+// Render Products
+// ================================
 
-  function render() {
-    if (activeCat === 'womens') {
-      grid.innerHTML = `
-        <div class="card" style="padding:22px; grid-column:1/-1; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-          <i class="fa-solid fa-heart" style="font-size:1.4rem; color:var(--danger);"></i>
-          <div style="flex:1; min-width:220px;">
-            <strong style="display:block; margin-bottom:4px;">Women's Emergency Kit</strong>
-            <span class="muted" style="font-size:0.85rem;">Discreetly packaged period care and safety essentials live in the private Women's Essentials section.</span>
-          </div>
-          <a href="womens-essentials.html" class="btn btn-primary">Open Women's Essentials</a>
-        </div>`;
-      resultCount.textContent = '';
-      return;
-    }
-    const list = activeCat === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.cat === activeCat);
-    resultCount.textContent = `${list.length} item${list.length === 1 ? '' : 's'}`;
-    grid.innerHTML = list.map((p) => `
-      <div class="r-card">
-        <div class="em-cover" style="background-image:url('${p.img}');"></div>
-        <div class="em-body">
-          <div class="em-name">${p.name}</div>
-          <div class="em-tags">${p.tags}</div>
-          <div class="em-foot">
-            <span class="em-price">₹${p.price}</span>
-            <button class="em-add-btn" data-add="${p.id}">Add</button>
-          </div>
-        </div>
-      </div>
-    `).join('');
+function renderProducts() {
+  if (!emGrid) return;
+
+  const filteredProducts = PRODUCTS.filter(
+    p => p.cat === activeCat
+  );
+
+  if (emResultCount) {
+    emResultCount.textContent =
+      `${filteredProducts.length} item${filteredProducts.length !== 1 ? "s" : ""}`;
   }
 
-  document.getElementById('emCatGrid').addEventListener('click', (e) => {
-    const card = e.target.closest('.em-cat-card');
-    if (!card) return;
-    document.querySelectorAll('.em-cat-card').forEach((c) => c.classList.remove('is-active'));
-    if (card.dataset.cat === activeCat) {
-      activeCat = 'all';
+  if (filteredProducts.length === 0) {
+    emGrid.innerHTML = `
+      <div class="card" style="padding:30px; text-align:center;">
+        <h3>No items available</h3>
+        <p class="faint">Try another category.</p>
+      </div>
+    `;
+    return;
+  }
+
+  emGrid.innerHTML = filteredProducts.map(p => `
+    <article class="card product-card">
+
+      <div
+        class="em-cover"
+        style="background-image: url('${p.img}');"
+      ></div>
+
+      <div class="em-body">
+
+        <div class="em-name">
+          ${p.name}
+        </div>
+
+        <div class="em-tags">
+          ${p.tags}
+        </div>
+
+        <div class="em-foot">
+
+          <span class="em-price">
+            ₹${p.price}
+          </span>
+
+          <button
+            class="em-add-btn"
+            data-product-id="${p.id}"
+          >
+            Add
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+  `).join("");
+}
+
+// ================================
+// Category Click
+// ================================
+
+categoryCards.forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    activeCat = card.dataset.cat;
+
+    categoryCards.forEach(c => {
+      c.classList.remove("is-active");
+    });
+
+    card.classList.add("is-active");
+
+    renderProducts();
+  });
+
+});
+
+// ================================
+// Add to Cart
+// ================================
+
+if (emGrid) {
+
+  emGrid.addEventListener("click", event => {
+
+    const button = event.target.closest(".em-add-btn");
+
+    if (!button) return;
+
+    const productId = Number(button.dataset.productId);
+
+    const product = PRODUCTS.find(
+      p => p.id === productId
+    );
+
+    if (!product) return;
+
+    // Use existing CampusGo cart system if available
+    if (typeof addToCart === "function") {
+      addToCart(product);
     } else {
-      card.classList.add('is-active');
-      activeCat = card.dataset.cat;
+
+      let cart = JSON.parse(
+        localStorage.getItem("cart") || "[]"
+      );
+
+      const existing = cart.find(
+        item => item.id === product.id
+      );
+
+      if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+      } else {
+        cart.push({
+          ...product,
+          qty: 1
+        });
+      }
+
+      localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+      );
     }
-    render();
+
+    button.textContent = "Added ✓";
+
+    setTimeout(() => {
+      button.textContent = "Add";
+    }, 1000);
+
   });
 
-  grid.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-add]');
-    if (!btn) return;
-    CampusGo.toast('Added — routed for fastest emergency delivery', 'success');
-  });
+}
 
-  render();
-})();
+// ================================
+// Initial Render
+// ================================
+
+renderProducts();
