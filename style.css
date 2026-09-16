@@ -1025,3 +1025,5 @@ img { max-width: 100%; display: block; }
 .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .benefit-card { padding: 22px; text-align: left; }
 .benefit-card i { font-size: 1.4rem; color: var(--primary); margin-bottom: 10px; display: block; }
+
+
